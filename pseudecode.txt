@@ -1,0 +1,60 @@
+PSUEDECODE
+
+DEKLARASI
+    MAX ← 100
+    nama[MAX], jabatan[MAX] : string
+    id[MAX] : integer
+    gaji[MAX] : double
+    jumlah : integer ← 0
+    pilihan : integer
+
+ALGORITMA
+    ULANGI
+        TAMPILKAN menu:
+            1. Tambah Data Karyawan
+            2. Tampilkan Data Karyawan (Filter ID)
+            3. Keluar
+        INPUT pilihan
+
+        PILIH pilihan
+        KASUS 1:
+            JIKA jumlah < MAX MAKA
+                INPUT id[jumlah]
+                INPUT nama[jumlah]
+                INPUT jabatan[jumlah]
+                INPUT gaji[jumlah]
+                jumlah ← jumlah + 1
+                TAMPILKAN "Data berhasil ditambahkan"
+            JIKA TIDAK
+                TAMPILKAN "Data karyawan sudah penuh"
+            AKHIR JIKA
+
+        KASUS 2:
+            JIKA jumlah = 0 MAKA
+                TAMPILKAN "Belum ada data karyawan"
+            JIKA TIDAK
+                INPUT cariID
+                ditemukan ← false
+
+                UNTUK i ← 0 SAMPAI jumlah - 1 LAKUKAN
+                    JIKA id[i] = cariID MAKA
+                        TAMPILKAN id[i], nama[i], jabatan[i], gaji[i]
+                        ditemukan ← true
+                        KELUAR DARI PERULANGAN
+                    AKHIR JIKA
+                AKHIR UNTUK
+
+                JIKA ditemukan = false MAKA
+                    TAMPILKAN "Data karyawan tidak ditemukan"
+                AKHIR JIKA
+            AKHIR JIKA
+
+        KASUS 3:
+            TAMPILKAN "Terima kasih telah menggunakan program"
+
+        DEFAULT:
+            TAMPILKAN "Pilihan tidak valid"
+        AKHIR PILIH
+    SELAMA pilihan ≠ 3
+
+SELESAI
